@@ -1,0 +1,17 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: #1e293b;
+  color: #fff;
+}
+
+.todos {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

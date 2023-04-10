@@ -1,0 +1,21 @@
+.todo {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.todo .title {
+  width: 70%;
+}
+
+.todo h4 {
+  font-size: 1.3rem;
+}
+
+.todo .btnBox {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
