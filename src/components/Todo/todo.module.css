@@ -3,10 +3,25 @@
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
+  flex-direction: column;
+}
+
+.todo .info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo .date {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .todo .title {
-  width: 70%;
+  width: 30%;
 }
 
 .todo h4 {
