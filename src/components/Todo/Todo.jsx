@@ -1,11 +1,11 @@
 import styles from "./todo.module.css";
 
-const Todo = () => {
+const Todo = ({ todo }) => {
   return (
     <div className={styles.todo}>
       <div className={styles.info}>
         <div className={styles.title}>
-          <h4>Todo</h4>
+          <h4>{todo.title}</h4>
         </div>
         <div className={styles.btnBox}>
           <button type="button">C</button>
@@ -14,8 +14,8 @@ const Todo = () => {
         </div>
       </div>
       <div className={styles.date}>
-        <div className={styles.createdAt}>Created at:4/10/2023</div>
-        <div className={styles.createdAt}>Last Update:4/11/2023</div>
+        <div className={styles.createdAt}>Created at:{todo.createdAt}</div>
+        <div className={styles.createdAt}>Last Update:{todo.lastUpdate}</div>
       </div>
     </div>
   );
