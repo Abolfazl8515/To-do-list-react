@@ -1,0 +1,100 @@
+.back-drop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.modal {
+  position: fixed;
+  top: 15%;
+  left: 35%;
+  width: 500px;
+  display: flex;
+  background-color: #fff;
+  margin: 0 auto;
+  border-radius: 7px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  animation: ani-modal 1s 1 normal forwards;
+}
+
+.modal-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: rgb(124, 139, 157);
+  margin: 0 auto;
+  border-radius: 7px;
+  z-index: 4;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content .title-Modal {
+  width: 100%;
+  /* height: 100px; */
+  text-align: center;
+}
+
+.modal-content .userInput {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content .userInput input {
+  width: 70%;
+  height: 30px;
+  font-size: 1.5rem;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #64748b;
+  padding: 10px 10px;
+}
+
+.modal-content .userInput input::placeholder {
+  color: #fff;
+}
+
+.modal-content .userInput input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #64748b;
+}
+
+.modal-content .btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content .btn-box .updateBtn {
+  width: 120px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 7px;
+  margin: 10px 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}

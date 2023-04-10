@@ -26,8 +26,24 @@ const reducer = (state, action) => {
       }
     case "delete":
       const filtredTodos = state.filter((t) => t.id !== Number(action.id));
-      console.log(filtredTodos);
       return filtredTodos;
+    case "completed": {
+      const index = state.findIndex((item) => item.id === Number(action.id));
+      const todo = { ...state[index] };
+      todo.isCompleted = !todo.isCompleted;
+      const todos = [...state];
+      todos[index] = todo;
+      return todos;
+    }
+    case "edit": {
+      const index = state.findIndex((item) => item.id === Number(action.id));
+      const todo = { ...state[index] };
+      todo.title = action.newTitle;
+      const todos = [...state];
+      todos[index] = todo;
+      return todos;
+    }
+
     default:
       return state;
   }
