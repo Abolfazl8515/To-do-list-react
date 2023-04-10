@@ -24,7 +24,10 @@ const reducer = (state, action) => {
         todos.push(todoInfo);
         return todos;
       }
-
+    case "delete":
+      const filtredTodos = state.filter((t) => t.id !== Number(action.id));
+      console.log(filtredTodos);
+      return filtredTodos;
     default:
       return state;
   }

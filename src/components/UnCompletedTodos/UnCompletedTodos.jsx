@@ -4,19 +4,24 @@ import styles from "./UnCompletedTodos.module.css";
 
 const UnCompletedTodos = () => {
   const todos = useTodos();
-  console.log(todos.length);
 
   const renderTodos = () => {
-    if (todos.length) {
-      return todos.map((t) => {
+    const filtredTodos = todos.filter((t) => t.isCompleted === false);
+    if (filtredTodos.length) {
+      return filtredTodos.map((t) => {
         return <Todo key={t.id} todo={t} />;
       });
     } else {
-      return <h2>UnCompleted Todos</h2>;
+      return <h2>There is no UnCompleted Todos</h2>;
     }
   };
 
-  return <div className={styles.container}>{renderTodos()}</div>;
+  return (
+    <div className={styles.container}>
+      <h2>UnCompleted Todos</h2>
+      {renderTodos()}
+    </div>
+  );
 };
 
 export default UnCompletedTodos;

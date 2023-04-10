@@ -8,6 +8,7 @@ const TodoForm = () => {
   const addTodoHandler = (e) => {
     e.preventDefault();
     dispatch({ type: "add", title: value });
+    setValue("");
   };
   return (
     <div className={styles.todoForm}>

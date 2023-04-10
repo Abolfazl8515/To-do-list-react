@@ -8,4 +8,18 @@
   background: #fda4af;
   color: #cdd3dd;
   border-radius: 10px;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(124, 139, 157);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
 }
