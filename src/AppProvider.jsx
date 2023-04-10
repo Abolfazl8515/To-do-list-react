@@ -39,6 +39,7 @@ const reducer = (state, action) => {
       const index = state.findIndex((item) => item.id === Number(action.id));
       const todo = { ...state[index] };
       todo.title = action.newTitle;
+      todo.lastUpdate = new Date().toLocaleDateString();
       const todos = [...state];
       todos[index] = todo;
       return todos;

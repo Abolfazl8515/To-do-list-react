@@ -20,12 +20,18 @@
   margin-top: 10px;
 }
 
-.todo .title {
+.todo .title,
+.todo .completeTitle {
   width: 30%;
 }
 
-.todo h4 {
+.todo .title h4,
+.todo .completeTitle h4 {
   font-size: 1.3rem;
+}
+
+.todo .completeTitle h4 {
+  text-decoration: line-through;
 }
 
 .todo .btnBox {
@@ -33,4 +39,28 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.todo .btnBox .btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.todo .btnBox .checkComplete {
+  color: #22c55e;
+}
+
+.todo .btnBox .edit {
+  color: #8b5cf6;
+}
+
+.todo .btnBox .delete {
+  color: #b91c1c;
 }

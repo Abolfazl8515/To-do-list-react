@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { useTodosActions } from "../../AppProvider";
 import styles from "./todo.module.css";
 import UpdateValueModal from "../UpdateValueModal/UpdateValueModal";
+import { FaTrashAlt, FaEdit, FaCheck, FaArrowLeft } from "react-icons/fa";
 
 const Todo = ({ todo }) => {
   const [status, setStatus] = useState(false);
@@ -17,7 +18,8 @@ const Todo = ({ todo }) => {
   const showModalHandler = () => {
     setStatus(true);
   };
-  const editHandler = () => {
+  const editHandler = (e) => {
+    e.preventDefault();
     dispatch({ type: "edit", id: El.current.id, newTitle: value });
     setStatus(false);
   };
@@ -30,18 +32,36 @@ const Todo = ({ todo }) => {
         onSubmit={editHandler}
       />
       <div className={styles.info}>
-        <div className={styles.title}>
+        <div
+          className={`${todo.isCompleted && styles.completeTitle} ${
+            !todo.isCompleted && styles.title
+          }`}
+        >
           <h4>{todo.title}</h4>
         </div>
         <div className={styles.btnBox}>
-          <button type="button" onClick={completedHandler}>
-            C
+          <button
+            type="button"
+            className={`${styles.btn} ${
+              !todo.isCompleted && styles.checkComplete
+            }`}
+            onClick={completedHandler}
+          >
+            {todo.isCompleted ? <FaArrowLeft /> : <FaCheck />}
           </button>
-          <button type="button" onClick={showModalHandler}>
-            E
+          <button
+            type="button"
+            className={`${styles.btn} ${styles.edit}`}
+            onClick={showModalHandler}
+          >
+            <FaEdit />
           </button>
-          <button type="button" onClick={deleteHandler}>
-            D
+          <button
+            type="button"
+            className={`${styles.btn} ${styles.delete}`}
+            onClick={deleteHandler}
+          >
+            <FaTrashAlt />
           </button>
         </div>
       </div>
