@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTodosActions } from "../../AppProvider";
 import styles from "./todoForm.module.css";
+import SelectFilter from "../SelectFilter/SelectFilter";
 
 const TodoForm = () => {
   const [value, setValue] = useState("");
@@ -22,6 +23,7 @@ const TodoForm = () => {
           />
           <button type="submit">+</button>
         </div>
+        <SelectFilter />
       </form>
     </div>
   );
