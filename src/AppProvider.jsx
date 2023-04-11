@@ -44,7 +44,18 @@ const reducer = (state, action) => {
       todos[index] = todo;
       return todos;
     }
-
+    case "sort":
+      const value = action.e.target.value;
+      console.log(value);
+      const todos = [...state];
+      const sortedTodos = todos.sort((a, b) => {
+        if (value === "lastUpdate") {
+          return new Date(a.lastUpdate) > new Date(b.lastUpdate) ? 1 : -1;
+        } else if (value === "Oldest") {
+          return new Date(a.lastUpdate) < new Date(b.lastUpdate) ? 1 : -1;
+        }
+      });
+      return sortedTodos;
     default:
       return state;
   }
