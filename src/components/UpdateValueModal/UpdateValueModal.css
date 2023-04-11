@@ -20,6 +20,8 @@
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
   z-index: 3;
   animation: ani-modal 1s 1 normal forwards;
+  opacity: 1;
+  animation: modal-animation 0.3s ease-in;
 }
 
 .modal-content {
@@ -97,4 +99,13 @@
 
 .hidden {
   display: none;
+}
+
+@keyframes modal-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -1,9 +1,12 @@
 import "./UpdateValueModal.css";
 
-const UpdateValueModal = ({ status, value, setValue, onSubmit }) => {
+const UpdateValueModal = ({ status, setStatus, value, setValue, onSubmit }) => {
   return (
     <>
-      <div className={status ? "back-drop" : "hidden"}></div>
+      <div
+        className={status ? "back-drop" : "hidden"}
+        onClick={() => setStatus(false)}
+      ></div>
       <div className={status ? "modal" : "hidden"}>
         <div className="modal-content">
           <form onSubmit={onSubmit}>

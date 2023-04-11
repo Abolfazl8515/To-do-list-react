@@ -27,6 +27,7 @@ const Todo = ({ todo }) => {
     <div className={styles.todo} id={todo.id} ref={El}>
       <UpdateValueModal
         status={status}
+        setStatus={setStatus}
         value={value}
         setValue={setValue}
         onSubmit={editHandler}
