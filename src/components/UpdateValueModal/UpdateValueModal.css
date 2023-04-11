@@ -9,11 +9,11 @@
 }
 
 .modal {
-  position: fixed;
+  position: absolute;
   top: 15%;
-  left: 35%;
-  width: 500px;
-  display: flex;
+  left: 25%;
+  right: 35%;
+  width: 50%;
   background-color: #fff;
   margin: 0 auto;
   border-radius: 7px;
@@ -43,7 +43,6 @@
 
 .modal-content .title-Modal {
   width: 100%;
-  /* height: 100px; */
   text-align: center;
 }
 
@@ -107,5 +106,18 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (max-width: 990px) {
+  .modal {
+    left: 5%;
+    width: 90%;
+  }
+}
+
+@media (max-width: 530px) {
+  .modal {
+    width: 90%;
   }
 }

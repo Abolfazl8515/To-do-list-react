@@ -56,3 +56,18 @@
 .todoForm form .box button:hover {
   font-size: 30px;
 }
+
+@media (max-width: 990px) {
+  .todoForm form .box {
+    width: 100%;
+  }
+  .todoForm form .box input {
+    width: 400px;
+  }
+}
+
+@media (max-width: 530px) {
+  .todoForm form .box input {
+    width: 200px;
+  }
+}
