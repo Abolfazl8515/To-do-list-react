@@ -1,66 +1,107 @@
 .todo {
-  width: 90%;
+  width: 400px;
+  height: auto;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
-  margin: 10px 0;
+  margin: 10px 20px;
   flex-direction: column;
+  background: rgb(73, 72, 75);
+  background: linear-gradient(
+    90deg,
+    rgba(73, 72, 75, 1) 26%,
+    rgba(83, 105, 108, 1) 100%
+  );
+  border-radius: 7px;
 }
 
 .todo .info {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
-.todo .date {
-  width: 100%;
+.todo .info h4 {
+  font-size: 1.4rem;
+}
+
+.todo .info .btnBox {
+  position: absolute;
+  left: 92%;
+  top: 35px;
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  flex-direction: column;
+  animation: aniamtion 0.3s ease;
 }
 
-.todo .title,
-.todo .completeTitle {
-  width: 30%;
-}
-
-.todo .title h4,
-.todo .completeTitle h4 {
-  font-size: 1.3rem;
-}
-
-.todo .completeTitle h4 {
-  text-decoration: line-through;
-}
-
-.todo .btnBox {
-  width: 30%;
+.todo .info .btnBox button {
+  width: 25px;
+  height: 25px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  margin-top: 5px;
 }
 
-.todo .btnBox .btn {
+.todo .info .btnBox .checkComplete {
+  background: #91b19d;
+  color: #16a34a;
+}
+
+.todo .info .btnBox .edit {
+  background: #c0a9b3;
+  color: #db2777;
+}
+
+.todo .info .btnBox .delete {
+  background: #a58989;
+  color: #b91c1c;
+}
+
+.todo .info .showBtns {
   width: 30px;
   height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
-  background: transparent;
-  font-size: 0.9rem;
+  border-radius: 50%;
+  background: rgb(187, 187, 190);
   cursor: pointer;
 }
 
-.todo .btnBox .checkComplete {
-  color: #22c55e;
+.todo .description {
+  width: 93%;
 }
 
-.todo .btnBox .edit {
-  color: #8b5cf6;
+.todo .date {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-.todo .btnBox .delete {
-  color: #b91c1c;
+.todo .date div {
+  padding: 10px;
+  border-radius: 7px;
+  background: #74737b;
+  color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes aniamtion {
+  from {
+    top: 20px;
+  }
+  to {
+    top: 35px;
+  }
 }

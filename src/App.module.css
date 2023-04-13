@@ -14,10 +14,10 @@
 }
 
 .todos {
-  width: 80%;
-  height: 50%;
+  width: 95%;
+  margin-top: 30px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 

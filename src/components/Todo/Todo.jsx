@@ -2,9 +2,16 @@ import { useRef, useState } from "react";
 import { useTodosActions } from "../../AppProvider";
 import styles from "./todo.module.css";
 import UpdateValueModal from "../UpdateValueModal/UpdateValueModal";
-import { FaTrashAlt, FaEdit, FaCheck, FaArrowLeft } from "react-icons/fa";
+import {
+  FaTrashAlt,
+  FaEdit,
+  FaCheck,
+  FaArrowLeft,
+  FaEllipsisV,
+} from "react-icons/fa";
 
 const Todo = ({ todo }) => {
+  const [showBtns, setShowBtns] = useState(false);
   const [status, setStatus] = useState(false);
   const [value, setValue] = useState(todo.title);
   const El = useRef();
@@ -33,42 +40,46 @@ const Todo = ({ todo }) => {
         onSubmit={editHandler}
       />
       <div className={styles.info}>
-        <div
-          className={`${todo.isCompleted && styles.completeTitle} ${
-            !todo.isCompleted && styles.title
-          }`}
+        <h4>{todo.title}</h4>
+        <button
+          type="button"
+          className={styles.showBtns}
+          onClick={() => setShowBtns((prevState) => !prevState)}
         >
-          <h4>{todo.title}</h4>
-        </div>
-        <div className={styles.btnBox}>
+          <FaEllipsisV />
+        </button>
+        <div className={showBtns ? `${styles.btnBox}` : `${styles.hidden}`}>
           <button
             type="button"
-            className={`${styles.btn} ${
-              !todo.isCompleted && styles.checkComplete
-            }`}
+            className={`${!todo.isCompleted && styles.checkComplete}`}
             onClick={completedHandler}
           >
             {todo.isCompleted ? <FaArrowLeft /> : <FaCheck />}
           </button>
           <button
             type="button"
-            className={`${styles.btn} ${styles.edit}`}
+            className={styles.edit}
             onClick={showModalHandler}
           >
             <FaEdit />
           </button>
           <button
             type="button"
-            className={`${styles.btn} ${styles.delete}`}
+            className={styles.delete}
             onClick={deleteHandler}
           >
             <FaTrashAlt />
           </button>
         </div>
       </div>
+      <div className={styles.description}>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, quis
+        minima. Impedit quas, non quos sint ducimus labore. Alias amet dolore
+        voluptatem tenetur a aut magni. Sapiente aut corrupti deserunt?
+      </div>
       <div className={styles.date}>
         <div className={styles.createdAt}>Created at:{todo.createdAt}</div>
-        <div className={styles.createdAt}>Last Update:{todo.lastUpdate}</div>
+        <div className={styles.lastUpdate}>Last Update:{todo.lastUpdate}</div>
       </div>
     </div>
   );
