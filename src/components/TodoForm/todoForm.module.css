@@ -1,60 +1,117 @@
-.todoForm {
+.backDrop {
   width: 100%;
-  height: 30%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.todoForm {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  right: 35%;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 7px;
+  z-index: 3;
+  animation: ani-modal 1s 1 normal forwards;
+  opacity: 1;
+  animation: modal-animation 0.3s ease-in;
+}
+
+.todoForm .todoFormContent {
+  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background: rgb(47, 46, 48);
+  background: linear-gradient(
+    90deg,
+    rgba(47, 46, 48, 1) 26%,
+    rgba(44, 50, 51, 1) 100%
+  );
+  margin: 0 auto;
+  border-radius: 7px;
+  z-index: 4;
 }
 
 .todoForm form {
-  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
 }
 
-.todoForm form .box {
-  width: 30%;
+.todoFormContent .titleModal {
+  padding: 20px 0;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.todoForm form .box input {
-  width: 100%;
-  height: 30px;
-  font-size: 1.5rem;
-  background: transparent;
-  color: #94a3b8;
+.todoFormContent .todoInfo {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.todoFormContent .todoInfo label {
+  font-size: 1.3rem;
+}
+
+.todoFormContent .todoInfo input {
+  width: 400px;
+  height: 40px;
+  font-size: 1.3rem;
+  padding: 0 10px;
+  background: rgb(67, 67, 68);
+  color: rgb(187, 187, 190);
   border: none;
-  border-bottom: 1px solid #64748b;
-  padding: 10px 10px;
+  border-radius: 7px;
 }
 
-.todoForm form .box input:focus {
+.todoFormContent .todoInfo input:focus {
   outline: none;
   border: none;
-  border-bottom: 2px solid #64748b;
 }
 
-.todoForm form .box button {
-  width: 70px;
-  height: 30px;
+.todoFormContent .btns {
+  padding: 20px 30px;
   display: flex;
-  justify-content: center;
-  font-size: 25px;
-  align-items: center;
-  border: 1px solid #94a3b8;
+  justify-content: space-between;
+}
+
+.todoFormContent .btns button {
+  padding: 10px 40px;
   border-radius: 7px;
-  margin-left: 20px;
-  background: transparent;
-  color: #94a3b8;
+  color: #fff;
   cursor: pointer;
 }
 
-.todoForm form .box button:hover {
-  font-size: 30px;
+.todoFormContent .btns .add {
+  padding: 10px 50px;
+  border: none;
+  background: rgb(67, 67, 68);
+}
+
+.todoFormContent .btns .cancel {
+  border: 1px solid #fff;
+  background: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes modal-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 990px) {

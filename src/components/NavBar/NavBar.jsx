@@ -1,7 +1,7 @@
 import { FaPlus } from "react-icons/fa";
 import styles from "./navBar.module.css";
 
-const NavBar = () => {
+const NavBar = ({ setIsShow }) => {
   return (
     <header className={styles.navBar}>
       <div className={styles.searchBox}>
@@ -15,7 +15,11 @@ const NavBar = () => {
         <h1>To Do List App</h1>
       </div>
       <div className={styles.addBtnBox}>
-        <button type="button" className={styles.addBtn}>
+        <button
+          type="button"
+          className={styles.addBtn}
+          onClick={() => setIsShow(true)}
+        >
           <FaPlus /> <span>Create</span>
         </button>
       </div>

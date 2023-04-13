@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./App.module.css";
 import AppProvider from "./AppProvider";
 import CompletedTodos from "./components/CompletedTodos/CompletedTodos";
@@ -6,11 +7,12 @@ import TodoForm from "./components/TodoForm/TodoForm";
 import UnCompletedTodos from "./components/UnCompletedTodos/UnCompletedTodos";
 
 const App = () => {
+  const [isShowAdd, setIsShowAdd] = useState(false);
   return (
     <AppProvider>
       <div className={styles.container}>
-        <NavBar />
-        <TodoForm />
+        <NavBar setIsShow={setIsShowAdd} />
+        <TodoForm isShowAdd={isShowAdd} setIsShowAdd={setIsShowAdd} />
         <div className={styles.todos}>
           <UnCompletedTodos />
           <CompletedTodos />
