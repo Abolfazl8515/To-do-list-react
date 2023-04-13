@@ -31,7 +31,13 @@ const Todo = ({ todo }) => {
     setStatus(false);
   };
   return (
-    <div className={styles.todo} id={todo.id} ref={El}>
+    <div
+      className={`${styles.todoBox} ${
+        todo.isCompleted && `${styles.completedTodo}`
+      }`}
+      id={todo.id}
+      ref={El}
+    >
       <UpdateValueModal
         status={status}
         setStatus={setStatus}
@@ -40,7 +46,12 @@ const Todo = ({ todo }) => {
         onSubmit={editHandler}
       />
       <div className={styles.info}>
-        <h4>{todo.title}</h4>
+        <h4
+          className={`${styles.title} ${todo.isCompleted && styles.completed}`}
+        >
+          {todo.title}
+        </h4>
+        <h2 className={!todo.isCompleted && styles.hidden}>Completed !</h2>
         <button
           type="button"
           className={styles.showBtns}
@@ -72,7 +83,11 @@ const Todo = ({ todo }) => {
           </button>
         </div>
       </div>
-      <div className={styles.description}>
+      <div
+        className={`${styles.description} ${
+          todo.isCompleted && styles.completed
+        }`}
+      >
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, quis
         minima. Impedit quas, non quos sint ducimus labore. Alias amet dolore
         voluptatem tenetur a aut magni. Sapiente aut corrupti deserunt?

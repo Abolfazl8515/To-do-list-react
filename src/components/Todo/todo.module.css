@@ -1,32 +1,52 @@
-.todo {
+.todoBox {
   width: 400px;
   height: auto;
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  margin: 10px 20px;
-  flex-direction: column;
   background: rgb(73, 72, 75);
   background: linear-gradient(
     90deg,
     rgba(73, 72, 75, 1) 26%,
     rgba(83, 105, 108, 1) 100%
   );
+  margin: 10px 20px;
+  flex-direction: column;
   border-radius: 7px;
 }
 
-.todo .info {
+.completedTodo {
+  background: rgb(73, 72, 75);
+  background: linear-gradient(
+    90deg,
+    rgba(73, 72, 75, 1) 26%,
+    rgba(83, 105, 108, 1) 100%
+  );
+}
+
+.todoBox .info {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.todo .info h4 {
+.todoBox .info .title {
   font-size: 1.4rem;
 }
 
-.todo .info .btnBox {
+.todoBox .info h2 {
+  padding: 3px 5px;
+  border-radius: 7px;
+  background: #91b19d;
+  color: #16a34a;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.todoBox .info .btnBox {
   position: absolute;
   left: 92%;
   top: 35px;
@@ -35,7 +55,7 @@
   animation: aniamtion 0.3s ease;
 }
 
-.todo .info .btnBox button {
+.todoBox .info .btnBox button {
   width: 25px;
   height: 25px;
   display: flex;
@@ -48,22 +68,22 @@
   margin-top: 5px;
 }
 
-.todo .info .btnBox .checkComplete {
+.todoBox .info .btnBox .checkComplete {
   background: #91b19d;
   color: #16a34a;
 }
 
-.todo .info .btnBox .edit {
+.todoBox .info .btnBox .edit {
   background: #c0a9b3;
   color: #db2777;
 }
 
-.todo .info .btnBox .delete {
+.todoBox .info .btnBox .delete {
   background: #a58989;
   color: #b91c1c;
 }
 
-.todo .info .showBtns {
+.todoBox .info .showBtns {
   width: 30px;
   height: 30px;
   display: flex;
@@ -75,18 +95,18 @@
   cursor: pointer;
 }
 
-.todo .description {
+.todoBox .description {
   width: 93%;
 }
 
-.todo .date {
+.todoBox .date {
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.todo .date div {
+.todoBox .date div {
   padding: 10px;
   border-radius: 7px;
   background: #74737b;

@@ -5,5 +5,11 @@
 }
 
 body {
+  background: rgb(28, 27, 29);
+  background: linear-gradient(
+    90deg,
+    rgba(28, 27, 29, 1) 26%,
+    rgba(9, 20, 22, 1) 100%
+  );
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
