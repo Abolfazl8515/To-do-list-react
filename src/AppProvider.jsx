@@ -16,17 +16,18 @@ const reducer = (state, action) => {
         const todoInfo = {
           id: Math.floor(Math.random() * 10000),
           title: action.title,
+          desc: action.desc,
           createdAt: new Date().toLocaleDateString(),
           lastUpdate: new Date().toLocaleDateString(),
           isCompleted: false,
         };
-        saveLocalStorage.setTodo(todoInfo);
         todos.push(todoInfo);
         return todos;
       }
-    case "delete":
+    case "delete": {
       const filtredTodos = state.filter((t) => t.id !== Number(action.id));
       return filtredTodos;
+    }
     case "completed": {
       const index = state.findIndex((item) => item.id === Number(action.id));
       const todo = { ...state[index] };
@@ -39,12 +40,13 @@ const reducer = (state, action) => {
       const index = state.findIndex((item) => item.id === Number(action.id));
       const todo = { ...state[index] };
       todo.title = action.newTitle;
+      todo.desc = action.newDesc;
       todo.lastUpdate = new Date().toLocaleDateString();
       const todos = [...state];
       todos[index] = todo;
       return todos;
     }
-    case "sort":
+    case "sort": {
       const value = action.e.target.value;
       console.log(value);
       const todos = [...state];
@@ -56,6 +58,12 @@ const reducer = (state, action) => {
         }
       });
       return sortedTodos;
+    }
+    case "search":
+      const filtredTodos = initialState.filter(
+        (t) => t.title.includes(action.search) || t.desc.includes(action.search)
+      );
+      return filtredTodos;
     default:
       return state;
   }

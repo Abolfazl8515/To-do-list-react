@@ -14,6 +14,7 @@ const Todo = ({ todo }) => {
   const [showBtns, setShowBtns] = useState(false);
   const [status, setStatus] = useState(false);
   const [value, setValue] = useState(todo.title);
+  const [descValue, setDescValue] = useState(todo.desc);
   const El = useRef();
   const dispatch = useTodosActions();
   const deleteHandler = () => {
@@ -27,7 +28,12 @@ const Todo = ({ todo }) => {
   };
   const editHandler = (e) => {
     e.preventDefault();
-    dispatch({ type: "edit", id: El.current.id, newTitle: value });
+    dispatch({
+      type: "edit",
+      id: El.current.id,
+      newTitle: value,
+      newDesc: descValue,
+    });
     setStatus(false);
   };
   return (
@@ -44,6 +50,8 @@ const Todo = ({ todo }) => {
         value={value}
         setValue={setValue}
         onSubmit={editHandler}
+        descValue={descValue}
+        setDescValue={setDescValue}
       />
       <div className={styles.info}>
         <h4
@@ -88,9 +96,7 @@ const Todo = ({ todo }) => {
           todo.isCompleted && styles.completed
         }`}
       >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, quis
-        minima. Impedit quas, non quos sint ducimus labore. Alias amet dolore
-        voluptatem tenetur a aut magni. Sapiente aut corrupti deserunt?
+        {todo.desc ? todo.desc : "No description"}
       </div>
       <div className={styles.date}>
         <div className={styles.createdAt}>Created at:{todo.createdAt}</div>

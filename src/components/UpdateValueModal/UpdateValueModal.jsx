@@ -1,6 +1,14 @@
 import "./UpdateValueModal.css";
 
-const UpdateValueModal = ({ status, setStatus, value, setValue, onSubmit }) => {
+const UpdateValueModal = ({
+  status,
+  setStatus,
+  value,
+  setValue,
+  descValue,
+  setDescValue,
+  onSubmit,
+}) => {
   return (
     <>
       <div
@@ -11,14 +19,25 @@ const UpdateValueModal = ({ status, setStatus, value, setValue, onSubmit }) => {
         <div className="modal-content">
           <form onSubmit={onSubmit}>
             <div className="title-Modal">
-              <h2>New Value:</h2>
+              <h2>New Title:</h2>
             </div>
             <div className="userInput">
               <input
                 type="text"
                 value={value}
-                placeholder="New Value ..."
+                placeholder="New Title ..."
                 onChange={(e) => setValue(e.target.value)}
+              />
+            </div>
+            <div className="title-Modal">
+              <h2>New Description:</h2>
+            </div>
+            <div className="userInput">
+              <input
+                type="text"
+                value={descValue}
+                placeholder="New Description ..."
+                onChange={(e) => setDescValue(e.target.value)}
               />
             </div>
             <div className="btn-box">

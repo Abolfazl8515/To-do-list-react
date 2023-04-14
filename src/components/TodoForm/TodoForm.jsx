@@ -5,10 +5,11 @@ import SelectFilter from "../SelectFilter/SelectFilter";
 
 const TodoForm = ({ isShowAdd, setIsShowAdd }) => {
   const [value, setValue] = useState("");
+  const [descValue, setDescValue] = useState("");
   const dispatch = useTodosActions();
   const addTodoHandler = (e) => {
     e.preventDefault();
-    dispatch({ type: "add", title: value });
+    dispatch({ type: "add", title: value, desc: descValue });
     if (value) {
       setIsShowAdd(false);
     }
@@ -36,7 +37,11 @@ const TodoForm = ({ isShowAdd, setIsShowAdd }) => {
             </div>
             <div className={styles.todoInfo}>
               <label>Description</label>
-              <input type="text" />
+              <input
+                type="text"
+                value={descValue}
+                onChange={(e) => setDescValue(e.target.value)}
+              />
             </div>
             <div className={styles.btns}>
               <button type="submit" className={styles.add}>
