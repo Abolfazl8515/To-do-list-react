@@ -61,6 +61,9 @@ const reducer = (state, action) => {
 
 const AppProvider = ({ children }) => {
   const [todos, setTodos] = useReducer(reducer, initialState);
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
   return (
     <todosContext.Provider value={todos}>
       <todosContextDispatcher.Provider value={setTodos}>
