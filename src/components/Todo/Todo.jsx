@@ -60,35 +60,37 @@ const Todo = ({ todo }) => {
           {todo.title}
         </h4>
         <h2 className={!todo.isCompleted && styles.hidden}>Completed !</h2>
-        <button
-          type="button"
-          className={styles.showBtns}
-          onClick={() => setShowBtns((prevState) => !prevState)}
-        >
-          <FaEllipsisV />
-        </button>
-        <div className={showBtns ? `${styles.btnBox}` : `${styles.hidden}`}>
+        <div className={styles.btns}>
           <button
             type="button"
-            className={`${!todo.isCompleted && styles.checkComplete}`}
-            onClick={completedHandler}
+            className={styles.showBtns}
+            onClick={() => setShowBtns((prevState) => !prevState)}
           >
-            {todo.isCompleted ? <FaArrowLeft /> : <FaCheck />}
+            <FaEllipsisV />
           </button>
-          <button
-            type="button"
-            className={styles.edit}
-            onClick={showModalHandler}
-          >
-            <FaEdit />
-          </button>
-          <button
-            type="button"
-            className={styles.delete}
-            onClick={deleteHandler}
-          >
-            <FaTrashAlt />
-          </button>
+          <div className={`${showBtns ? styles.btnBox : styles.hidden}`}>
+            <button
+              type="button"
+              className={`${!todo.isCompleted && styles.checkComplete}`}
+              onClick={completedHandler}
+            >
+              {todo.isCompleted ? <FaArrowLeft /> : <FaCheck />}
+            </button>
+            <button
+              type="button"
+              className={styles.edit}
+              onClick={showModalHandler}
+            >
+              <FaEdit />
+            </button>
+            <button
+              type="button"
+              className={styles.delete}
+              onClick={deleteHandler}
+            >
+              <FaTrashAlt />
+            </button>
+          </div>
         </div>
       </div>
       <div

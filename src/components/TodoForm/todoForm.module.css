@@ -9,7 +9,7 @@
 }
 
 .todoForm {
-  position: absolute;
+  position: fixed;
   top: 15%;
   left: 25%;
   right: 35%;
@@ -115,16 +115,14 @@
 }
 
 @media (max-width: 990px) {
-  .todoForm form .box {
-    width: 100%;
-  }
-  .todoForm form .box input {
-    width: 400px;
+  .todoForm {
+    width: 90%;
+    left: 5%;
   }
 }
 
 @media (max-width: 530px) {
-  .todoForm form .box input {
-    width: 200px;
+  .todoFormContent .todoInfo input {
+    width: 90%;
   }
 }

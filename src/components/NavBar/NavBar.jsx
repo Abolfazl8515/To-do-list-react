@@ -14,17 +14,19 @@ const NavBar = ({ setIsShow }) => {
   };
   return (
     <header className={styles.navBar}>
-      <div className={styles.searchBox}>
-        <input
-          type="text"
-          placeholder="Search Todos..."
-          className={styles.search}
-          value={value}
-          onChange={changeHandler}
-        />
-      </div>
-      <div className={styles.title}>
-        <h1>To Do List App</h1>
+      <div className={styles.box}>
+        <div className={styles.searchBox}>
+          <input
+            type="text"
+            placeholder="Search Todos..."
+            className={styles.search}
+            value={value}
+            onChange={changeHandler}
+          />
+        </div>
+        <div className={styles.title}>
+          <h1>To Do List App</h1>
+        </div>
       </div>
       <div className={styles.addBtnBox}>
         <button

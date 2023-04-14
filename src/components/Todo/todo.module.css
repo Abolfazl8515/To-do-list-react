@@ -28,7 +28,8 @@
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
 .todoBox .info .title {
@@ -36,6 +37,7 @@
 }
 
 .todoBox .info h2 {
+  width: 140px;
   padding: 3px 5px;
   border-radius: 7px;
   background: #91b19d;
@@ -46,12 +48,15 @@
   text-decoration: line-through;
 }
 
-.todoBox .info .btnBox {
+.todoBox .info .btns {
   position: absolute;
-  left: 92%;
-  top: 35px;
+  left: 90%;
   display: flex;
   flex-direction: column;
+}
+
+.todoBox .info .btns .btnBox {
+  opacity: 1;
   animation: aniamtion 0.3s ease;
 }
 
@@ -103,7 +108,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 80px;
 }
 
 .todoBox .date div {
@@ -119,9 +124,36 @@
 
 @keyframes aniamtion {
   from {
-    top: 20px;
+    opacity: 0;
   }
   to {
-    top: 35px;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 990px) {
+  .todoBox {
+    width: 600px;
+  }
+}
+
+@media (max-width: 530px) {
+  .navBar {
+    height: 150px;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .todoBox .date {
+    flex-direction: column;
+  }
+  /* .todoBox .info .btnBox {
+    left: 88%;
+  } */
+  .todoBox .date div {
+    margin-top: 10px;
+  }
+  .todoBox .info {
+    align-items: center;
+    flex-direction: column;
   }
 }

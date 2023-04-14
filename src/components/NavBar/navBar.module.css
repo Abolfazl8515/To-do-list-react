@@ -12,6 +12,13 @@
   );
 }
 
+.navBar .box {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .navBar .searchBox,
 .title,
 .addBtnBox {
@@ -59,4 +66,27 @@
 .navBar .addBtn span {
   font-weight: bold;
   margin-left: 10px;
+}
+
+@media (max-width: 990px) {
+  .navBar {
+    justify-content: space-between;
+  }
+  .box {
+    flex-direction: column-reverse;
+  }
+  .title {
+    width: 100%;
+  }
+  .searchBox {
+    width: 100%;
+  }
+}
+
+@media (max-width: 530px) {
+  .navBar {
+    height: 150px;
+    justify-content: space-around;
+    flex-direction: column;
+  }
 }

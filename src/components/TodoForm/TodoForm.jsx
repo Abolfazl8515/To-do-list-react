@@ -14,6 +14,7 @@ const TodoForm = ({ isShowAdd, setIsShowAdd }) => {
       setIsShowAdd(false);
     }
     setValue("");
+    setDescValue("");
   };
   return (
     <>

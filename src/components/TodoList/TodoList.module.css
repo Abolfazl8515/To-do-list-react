@@ -2,6 +2,18 @@
   width: 90%;
   height: auto;
   display: flex;
-  justify-content: flex-start;
   flex-wrap: wrap;
+}
+
+@media (max-width: 990px) {
+  .todoList {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 530px) {
+  .todoList {
+    width: 100%;
+    justify-content: center;
+  }
 }
