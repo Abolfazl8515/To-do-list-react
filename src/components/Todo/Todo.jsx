@@ -59,7 +59,11 @@ const Todo = ({ todo }) => {
         >
           {todo.title}
         </h4>
-        <h2 className={!todo.isCompleted && styles.hidden}>Completed !</h2>
+        <h4
+          className={!todo.isCompleted ? styles.hidden : styles.completedTodoTitle}
+        >
+          Completed !
+        </h4>
         <div className={styles.btns}>
           <button
             type="button"
