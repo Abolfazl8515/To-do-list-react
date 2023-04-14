@@ -47,23 +47,13 @@ const reducer = (state, action) => {
       return todos;
     }
     case "sort": {
-      const value = action.e.target.value;
-      console.log(value);
       const todos = [...state];
       const sortedTodos = todos.sort((a, b) => {
-        if (value === "lastUpdate") {
-          return new Date(a.lastUpdate) > new Date(b.lastUpdate) ? 1 : -1;
-        } else if (value === "Oldest") {
-          return new Date(a.lastUpdate) < new Date(b.lastUpdate) ? 1 : -1;
-        }
+        return new Date(a.lastUpdate) > new Date(b.lastUpdate) ? 1 : -1;
       });
+      localStorage.setItem("todos", JSON.stringify(sortedTodos));
       return sortedTodos;
     }
-    case "search":
-      const filtredTodos = initialState.filter(
-        (t) => t.title.includes(action.search) || t.desc.includes(action.search)
-      );
-      return filtredTodos;
     default:
       return state;
   }
@@ -71,9 +61,6 @@ const reducer = (state, action) => {
 
 const AppProvider = ({ children }) => {
   const [todos, setTodos] = useReducer(reducer, initialState);
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
   return (
     <todosContext.Provider value={todos}>
       <todosContextDispatcher.Provider value={setTodos}>

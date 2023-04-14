@@ -10,6 +10,7 @@ const TodoForm = ({ isShowAdd, setIsShowAdd }) => {
   const addTodoHandler = (e) => {
     e.preventDefault();
     dispatch({ type: "add", title: value, desc: descValue });
+    dispatch({ type: "sort" });
     if (value) {
       setIsShowAdd(false);
     }
