@@ -2,13 +2,15 @@ import { FaPlus } from "react-icons/fa";
 import styles from "./navBar.module.css";
 import { useState } from "react";
 import { useTodosActions } from "../../AppProvider";
+import { useSearch, useSearchActions } from "./NavBarProvider";
 
 const NavBar = ({ setIsShow }) => {
-  const dispatch = useTodosActions();
+  const searchKey = useSearch();
+  const dispatch = useSearchActions();
   const [value, setValue] = useState("");
   const changeHandler = (e) => {
     setValue(e.target.value);
-    dispatch({ type: "search", search: value });
+    dispatch({ type: "addValue", search: e.target.value });
   };
   return (
     <header className={styles.navBar}>
