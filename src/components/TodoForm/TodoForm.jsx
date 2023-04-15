@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useTodosActions } from "../../AppProvider";
 import styles from "./todoForm.module.css";
-import SelectFilter from "../SelectFilter/SelectFilter";
 
 const TodoForm = ({ isShowAdd, setIsShowAdd }) => {
   const [value, setValue] = useState("");
